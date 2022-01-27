@@ -1,9 +1,10 @@
-import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from "./components/Navbar/Navbar";
-import {AddBook} from './components/book/Addbook'
-import {Books} from './components/book/Books'
+import { AddBook } from './components/book/Addbook'
+import { Books } from './components/book/Books'
 import { RegisterUser } from './components/users/RegisterUser';
 import { LoginUser } from './components/users/LoginUser';
+import { HomePage } from './components/HomePage';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Switch>
+          <Route exact path='/' component={HomePage} />
           <Route exact path='/books' component={Books} />
           <Route exact path='/addbook' component={AddBook} />
           <Route exact path='/register' component={RegisterUser} />
