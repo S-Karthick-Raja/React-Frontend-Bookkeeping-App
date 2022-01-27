@@ -2,6 +2,7 @@ import {
   USER_LOGIN_FAIL,
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
+  USER_LOGOUT_SUCCESS,
   USER_REGISTER_FAIL,
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
@@ -24,7 +25,7 @@ const userReducer = (state = {}, action) => {
         loading: false,
       };
 
-    //Login
+  //Login
     case USER_LOGIN_REQUEST:
       return {
         loading: true,
@@ -38,7 +39,11 @@ const userReducer = (state = {}, action) => {
         error: action.payload,
       };
 
-  default:
+  // Logout
+    case USER_LOGOUT_SUCCESS:
+      return {};
+
+    default:
       return state;
   }
 };

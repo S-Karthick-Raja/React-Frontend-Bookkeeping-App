@@ -6,6 +6,7 @@ import {
   USER_LOGIN_REQUEST,
   USER_LOGIN_SUCCESS,
   USER_LOGIN_FAIL,
+  USER_LOGOUT_SUCCESS,
 } from "../books/actionTypes";
 
 const registerUserAction = (name, email, password) => {
@@ -70,7 +71,7 @@ const loginUserAction = (email, password) => {
         type: USER_LOGIN_SUCCESS,
         payload: data,
       });
-      
+
       //Save the user into localstorage
       localStorage.setItem("userAuthData", JSON.stringify(data));
     } catch (error) {
@@ -82,5 +83,16 @@ const loginUserAction = (email, password) => {
   };
 };
 
+//Logout action
+const logoutUserAction = () => async dispatch => {
+  try {
+    //Remove user from storage
+    localStorage.removeItem('userAuthData');
+    dispatch({
+      type: USER_LOGOUT_SUCCESS,
+    });
+  } catch (error) { }
+};
 
-export { registerUserAction,loginUserAction };
+
+export { registerUserAction, loginUserAction, logoutUserAction };
