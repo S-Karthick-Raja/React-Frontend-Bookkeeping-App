@@ -29,7 +29,7 @@ const createBookAction = bookData => {
 
 
 // Fetch Book
-const fetchBooks = () => {
+const fetchBooksAction = () => {
     return async dispatch => {
         try {
             dispatch({
@@ -57,4 +57,4 @@ const fetchBooks = () => {
     };
 };
 
-export { createBookAction, fetchBooks };
+export { createBookAction, fetchBooksAction };
