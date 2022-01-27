@@ -4,6 +4,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { createBookReducer } from '../reducers/books/createBookReducer';
 import { booksListReducer } from '../reducers/books/bookListResucer';
 import { userReducer } from '../reducers/users/userAuthReducer';
+import { userProfileReducer } from '../reducers/users/userProfileReducer';
 
 
 const middleware = [thunk];
@@ -12,6 +13,7 @@ const reducer = combineReducers({
     bookCreated: createBookReducer,
     booksList: booksListReducer,
     userLogin: userReducer,
+    userProfile : userProfileReducer,
 });
 
 //Get user from localstorage and save it into our store
