@@ -1,10 +1,19 @@
-import AddBook from "./components/book/Addbook";
+import { BrowserRouter, Route, Switch} from 'react-router-dom';
+import { Navbar } from "./components/Navbar/Navbar";
+import {AddBook} from './components/book/Addbook'
+import {Books} from './components/book/Books'
 
 function App() {
   return (
     <div className="App">
-      <h1 className="demo">Book App</h1>
-      <AddBook />
+      <BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path='/books' component={Books} />
+          <Route exact path='/addbook' component={AddBook} />
+        </Switch>
+      </BrowserRouter>
+
     </div>
   );
 }
