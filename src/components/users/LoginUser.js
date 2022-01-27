@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { loginUserAction } from '../../redux/actions/users/usersAction';
+import { ErrorMessage } from '../ErrorMessage';
 
 
-const LoginUser = () => {
+const LoginUser = ({ history }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const dispatch = useDispatch();
+
+    //Grab pieces of data from our store that we care about
+    const state = useSelector(state => {
+        return state.userLogin;
+    });
+
+    const { loading, userInfo, error } = state;
 
     //Submit handler
     const loginUserSubmitHandler = e => {
@@ -16,10 +24,17 @@ const LoginUser = () => {
         dispatch(loginUserAction(email, password));
     };
 
+    //Redirect
+    useEffect(() => {
+        if (userInfo) history.push('/profile');
+    }, [history, state, userInfo]);
+
     return (
         <div className='row container-height'>
             <div className='col-lg-6 col-md-6 m-auto'>
                 <div className='container'>
+                    {loading && <h1>Loading</h1>}
+                    {error && <ErrorMessage>{error}</ErrorMessage>}
                     <h1 className='text-center'>Login/Signin</h1>
                     <form onSubmit={loginUserSubmitHandler}>
                         <fieldset>
