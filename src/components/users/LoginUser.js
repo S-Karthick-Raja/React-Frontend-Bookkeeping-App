@@ -1,60 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { registerUserAction } from '../../redux/actions/users/usersAction';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { loginUserAction } from '../../redux/actions/users/usersAction';
 
 
-const RegisterUser = ({ history }) => {
-    const [name, setName] = useState('');
+const LoginUser = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const dispatch = useDispatch();
 
-    //Grab user login from store
-    const userLogin = useSelector(state => state.userLogin);
-
-    const { userInfo } = userLogin;
-
-    //Redirect if user is login/authenticated
-
-    useEffect(() => {
-        if (userInfo) {
-            history.push('/dashboard');
-        }
-    }, [history, userInfo]);
-
-    const formSubmitHandler = e => {
+    //Submit handler
+    const loginUserSubmitHandler = e => {
         e.preventDefault();
-        //disptach action here
-        dispatch(registerUserAction(name, email, password));
+        console.log(email, password);
+        dispatch(loginUserAction(email, password));
     };
-
 
     return (
         <div className='row container-height'>
             <div className='col-lg-6 col-md-6 m-auto'>
                 <div className='container'>
-                    <h1 className='text-center'>Register</h1>
-
-                    <form onSubmit={formSubmitHandler}>
+                    <h1 className='text-center'>Login/Signin</h1>
+                    <form onSubmit={loginUserSubmitHandler}>
                         <fieldset>
-                            <div className='form-group'>
-                                <label htmlFor='exampleInputEmail1'>Name</label>
-                                <input
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
-                                    type='text'
-                                    className='form-control'
-                                    id='exampleInputEmail1'
-                                    aria-describedby='emailHelp'
-                                    placeholder='Enter Name'
-                                />
-                            </div>
                             <div className='form-group'>
                                 <label htmlFor='exampleInputEmail1'>Email address</label>
                                 <input
                                     value={email}
-                                    onChange={(e) => setEmail(e.target.value)}
+                                    onChange={e => setEmail(e.target.value)}
                                     type='email'
                                     className='form-control'
                                     id='exampleInputEmail1'
@@ -66,7 +39,7 @@ const RegisterUser = ({ history }) => {
                                 <label htmlFor='exampleInputPassword1'>Password</label>
                                 <input
                                     value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
+                                    onChange={e => setPassword(e.target.value)}
                                     type='password'
                                     className='form-control'
                                     id='exampleInputPassword1'
@@ -74,7 +47,7 @@ const RegisterUser = ({ history }) => {
                                 />
                             </div>
                             <button type='submit' className='btn btn-info m-auto'>
-                                Register
+                                Login
                             </button>
                         </fieldset>
                     </form>
@@ -84,4 +57,4 @@ const RegisterUser = ({ history }) => {
     );
 };
 
-export { RegisterUser };
+export { LoginUser };

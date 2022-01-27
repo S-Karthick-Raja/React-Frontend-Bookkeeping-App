@@ -3,6 +3,7 @@ import { Navbar } from "./components/Navbar/Navbar";
 import {AddBook} from './components/book/Addbook'
 import {Books} from './components/book/Books'
 import { RegisterUser } from './components/users/RegisterUser';
+import { LoginUser } from './components/users/LoginUser';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path='/books' component={Books} />
           <Route exact path='/addbook' component={AddBook} />
           <Route exact path='/register' component={RegisterUser} />
+          <Route exact path='/login' component={LoginUser} />
         </Switch>
       </BrowserRouter>
 
