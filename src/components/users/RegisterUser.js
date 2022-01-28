@@ -19,9 +19,10 @@ const RegisterUser = ({ history }) => {
 
     useEffect(() => {
         if (userInfo) {
-            history.push('/dashboard');
+            history.push('/profile');
         }
     }, [history, userInfo]);
+
 
     const formSubmitHandler = e => {
         e.preventDefault();

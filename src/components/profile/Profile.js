@@ -34,32 +34,6 @@ const Profile = () => {
                         </div>
                     </div>
                 </div> }
-                
-
-            {/* Table */}
-            {loading ? <h1>Loading Please Wait</h1> : 
-            <table className='table table-hover'>
-            <thead>
-                <tr>
-                    <th scope='col'>Author</th>
-                    <th scope='col'>Category</th>
-                    <th scope='col'>Book Name</th>
-                    <th scope='col'>Delete</th>
-                    <th scope='col'>Update</th>
-                </tr>
-            </thead>
-            <tbody>
-                {user?.books.map( book => ( 
-                       <tr className='table-dark'>
-                       <th scope='row'>{book.author}</th>
-                       <td>{book.category}</td>
-                       <td>{book.title}</td>
-                       <td>Delete</td>
-                       <td>Update</td>
-                   </tr>
-                ))}
-            </tbody>
-        </table>}
         </>
     );
 };

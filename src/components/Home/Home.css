@@ -1,9 +1,9 @@
 .Container {
   position: relative;
   min-height: 300px;
-  max-height: 800px;
+  max-height: max-content;
+  margin-bottom: 10px;
   overflow: hidden;
-  margin-bottom: 500px;
 }
 
 /* Style the video: 100% width and height to cover the entire window */
@@ -17,7 +17,7 @@
   position: absolute;
   top: 0;
   color: #f1f1f1;
-  background-color: rgba(0, 0, 0, 0.3);
+  /* background-color: rgba(0, 0, 0, 0.3); */
   width: 100%;
   height: 100%;
   display: flex;
@@ -56,4 +56,118 @@
   display: block;
   margin: 15px auto;
   border: #f1f1f1 1px solid;
+}
+
+.about {
+  margin: 20px;
+  margin-bottom: 30px;
+  background: rgb(32, 55, 76);
+  padding: 20px;
+}
+ul{
+  list-style-type: circle;
+}
+@media only screen and (max-width: 850px) {
+  .SubContent p {
+    font-size: 1rem;
+  }
+  .SubContent button {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    font-size: 1rem;
+  }
+
+  .SubContent img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 670px) {
+  .SubContent p {
+    font-size: 0.8rem;
+  }
+  .SubContent button {
+    margin-top: 8px;
+    margin-bottom: 8px;
+
+    font-size: 1rem;
+  }
+
+  .SubContent img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .SubContent p {
+    font-size: 0.5rem;
+  }
+  .SubContent button {
+    margin-top: 4px;
+    margin-bottom: 4px;
+
+    font-size: 0.5rem;
+  }
+
+  .SubContent img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  .SubContent {
+    padding: 5px;
+  }
+  .SubContent p {
+    font-size: 0.7rem;
+  }
+
+  .SubContent img {
+    margin: 7px auto;
+    margin-bottom: 35px;
+  }
+}
+
+@media only screen and (max-width: 470px) {
+  .SubContent img {
+    margin-bottom: 50px;
+  }
+}
+@media only screen and (max-width: 440px) {
+  .SubContent {
+    padding: 4px;
+  }
+  .SubContent p {
+    font-size: 0.5rem;
+  }
+  .SubContent button {
+    margin-bottom: 5px;
+  }
+  .SubContent img {
+    margin-bottom: 70px;
+    height: 60px;
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 440px) {
+  .SubContent img {
+    margin-bottom: 90px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .SubContent img {
+    margin-bottom: 110px;
+  }
+}
+
+@media only screen and (max-width: 340px) {
+  .SubContent img {
+    margin-bottom: 130px;
+  }
 }

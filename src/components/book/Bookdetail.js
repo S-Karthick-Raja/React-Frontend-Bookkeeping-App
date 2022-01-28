@@ -90,4 +90,4 @@ const BookDetail = ({ history }) => {
   );
 };
 
-export  {BookDetail};
+export { BookDetail };

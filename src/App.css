@@ -1,3 +1,42 @@
-.demo{
-  color: crimson;
+.Mainbody {
+  align-items: flex-start;
+  background-color: rgba(255, 255, 255, 0.959);
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding-bottom: 15px ;
+  padding-top: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  width: max-content;
+  height: max-content;
+  color:black;
+}
+.Bookdetail{
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+h5{
+  font-size: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+.outerbody{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.icons{
+  display: flex;
+  justify-content: space-around;
+}
+.image{
+  width: 290px;
+  height: 300px;
 }

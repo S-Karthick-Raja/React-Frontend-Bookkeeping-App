@@ -7,6 +7,8 @@ import { LoginUser } from './components/users/LoginUser';
 import { Home } from './components/Home/Home';
 import { Profile } from './components/profile/Profile';
 import { UpdateProfile } from './components/UpdateProfile/UpdateProfile';
+import { Bookslibrary } from './components/book/BookLibrary';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
           <Route exact path='/profile' component={Profile} />
           <Route exact path='/user-update' component={UpdateProfile} />
           <Route exact path='/books' component={Books} />
+          <Route exact path='/book-library' component={Bookslibrary} />
           <Route exact path='/addbook' component={AddBook} />
           <Route exact path='/register' component={RegisterUser} />   
         </Switch>

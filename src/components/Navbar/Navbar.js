@@ -1,8 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { useSelector , useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { logoutUserAction } from '../../redux/actions/users/usersAction';
+import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
+
 
 const Navbar = props => {
   const state = useSelector(state => state.userLogin);
@@ -21,7 +23,7 @@ const Navbar = props => {
     <header>
       <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
         <Link className='navbar-brand' to='/'>
-          BooKkeeping Application
+          <LibraryBooksIcon color='error' /> BooKkeeping Application
         </Link>
         <button
           className='navbar-toggler'
@@ -38,7 +40,7 @@ const Navbar = props => {
           <ul className='navbar-nav m-auto'>
             <li className='nav-item active'>
               <Link className='nav-link' to='/'>
-                Home <span className='sr-only'>(current)</span>
+                Home
               </Link>
             </li>
             {!userInfo ? (
@@ -58,7 +60,7 @@ const Navbar = props => {
               <>
                 <li className='nav-item'>
                   <Link className='nav-link' to='/books'>
-                    Books
+                    Library
                   </Link>
                 </li>
                 <li className='nav-item'>
@@ -67,8 +69,8 @@ const Navbar = props => {
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link className='nav-link' to='/users'>
-                    Users
+                  <Link className='nav-link' to='/book-library'>
+                    Books
                   </Link>
                 </li>
                 <li className='nav-item'>
@@ -77,10 +79,10 @@ const Navbar = props => {
                   </Link>
                 </li>
                 <li className='nav-item'>
-                  <Link 
-                  onClick={logoutHandler}
-                  className='nav-link'
-                  to='/login'>
+                  <Link
+                    onClick={logoutHandler}
+                    className='nav-link'
+                    to='/login'>
                     Logout
                   </Link>
                 </li>
@@ -88,9 +90,20 @@ const Navbar = props => {
             )}
           </ul>
         </div>
+
+        <form className='form-inline my-2 my-lg-0'>
+          <input
+            className='form-control mr-sm-2'
+            type='text'
+            placeholder='Search'
+          />
+          <button className='btn btn-secondary my-2 my-sm-0' type='submit'>
+            Search
+          </button>
+        </form>
       </nav>
     </header>
   );
 };
 
-export  {Navbar};
+export { Navbar };
