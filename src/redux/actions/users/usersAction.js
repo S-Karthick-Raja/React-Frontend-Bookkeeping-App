@@ -10,6 +10,9 @@ import {
   USER_PROFILE_REQUEST,
   USER_PROFILE_SUCCESS,
   USER_PROFILE_FAIL,
+  USER_UPDATE_REQUEST,
+  USER_UPDATE_SUCCESS,
+  USER_UPDATE_FAIL,
 } from "../books/actionTypes";
 
 const registerUserAction = (name, email, password) => {
@@ -126,4 +129,42 @@ const getUserProfile = () => {
   };
 };
 
-export { registerUserAction, loginUserAction, logoutUserAction, getUserProfile };
+const updateUser = (name, email, password) => {
+  return async (dispatch, getState) => {
+    try {
+      dispatch({
+        type: USER_UPDATE_REQUEST,
+        loading: true,
+      });
+      // Get the token of the user from store because that's what our endpoint need
+      const { userInfo } = getState().userLogin;
+      console.log(userInfo.token);
+      //Create a config and pass to axios for authentication
+      const config = {
+        headers: {
+          'Content-Type': 'application/json',
+          authorization: `Bearer ${userInfo.token}`,
+        },
+      };
+      const { data } = await axios.put(
+        '/api/users/profile/update',
+        { name, email, password },
+        config
+      );
+      dispatch({
+        type: USER_UPDATE_SUCCESS,
+        payload: data,
+      });
+    } catch (error) {
+      dispatch({
+        type: USER_UPDATE_FAIL,
+        payload:
+          error.response && error.response.data.message
+            ? error.response.data.message
+            : error.message,
+      });
+    }
+  };
+};
+
+export { registerUserAction, loginUserAction, logoutUserAction, getUserProfile, updateUser };
