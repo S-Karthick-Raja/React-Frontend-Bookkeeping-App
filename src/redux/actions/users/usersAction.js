@@ -98,32 +98,32 @@ const logoutUserAction = () => async dispatch => {
 };
 
 // Profile action
-const getUserProfileAction = () => {
+const getUserProfile = () => {
   return async (dispatch, getState) => {
     // Grab the user token from store
-
-    const {userInfo} = getState().userLogin;
+    const { userInfo } = getState().userLogin;
     try {
       dispatch({
         type: USER_PROFILE_REQUEST,
       });
       const config = {
-        header : {
-          authorization : `Bearer ${userInfo.token}`
-        }
-      }
+        headers: {
+          authorization: `Bearer ${userInfo.token}`,
+        },
+      };
       // make request
-      const data = await axios.get('/api/users/profile', config);
+      const { data } = await axios.get('/api/users/profile', config);
       dispatch({
         type: USER_PROFILE_SUCCESS,
-        payload : data,
-      })
+        payload: data,
+      });
     } catch (error) {
       dispatch({
-        type : USER_PROFILE_FAIL,
-        payload : error.response && error.response.data.message,
-      })
+        type: USER_PROFILE_FAIL,
+        payload: error.response && error.response.data.message,
+      });
     }
-  }
-}
-export { registerUserAction, loginUserAction, logoutUserAction, getUserProfileAction };
+  };
+};
+
+export { registerUserAction, loginUserAction, logoutUserAction, getUserProfile };
