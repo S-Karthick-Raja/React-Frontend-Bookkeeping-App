@@ -38,7 +38,7 @@ const Navbar = props => {
 
         <div className='collapse navbar-collapse' id='navbarColor01'>
           <ul className='navbar-nav m-auto'>
-            <li className='nav-item active'>
+            <li className='nav-item '>
               <Link className='nav-link' to='/'>
                 Home
               </Link>
