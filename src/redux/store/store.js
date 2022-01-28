@@ -5,6 +5,7 @@ import { createBookReducer } from '../reducers/books/createBookReducer';
 import { booksListReducer } from '../reducers/books/bookListResucer';
 import { userReducer } from '../reducers/users/userAuthReducer';
 import { userProfileReducer } from '../reducers/users/userProfileReducer';
+import { userUpdateReducer } from '../reducers/users/userUpdateReducer';
 
 
 const middleware = [thunk];
@@ -14,6 +15,7 @@ const reducer = combineReducers({
     booksList: booksListReducer,
     userLogin: userReducer,
     userProfile : userProfileReducer,
+    updatedUser: userUpdateReducer,
 });
 
 //Get user from localstorage and save it into our store
