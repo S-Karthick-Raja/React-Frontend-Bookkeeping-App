@@ -4,49 +4,55 @@
   border-radius: 18px;
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   margin-bottom: 20px;
   margin-top: 30px;
   overflow: hidden;
-  padding-bottom: 15px ;
+  padding-bottom: 15px;
   padding-top: 15px;
   padding-left: 15px;
   padding-right: 15px;
   width: max-content;
   height: max-content;
-  color:black;
+  color: black;
 }
-.Bookdetail{
+.Bookdetail {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-h5{
+h5 {
   font-size: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
-.outerbody{
+.outerbody {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
   height: 500px;
   gap: 10px;
 }
-.icons{
+.icons {
   display: flex;
   justify-content: space-around;
 }
-.image{
+.image {
   width: 290px;
   height: 300px;
 }
 
-.addbooks{
+.addbooks {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 50px;
   height: 500px;
+}
+.userbooks {
+  align-items: center;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
 }

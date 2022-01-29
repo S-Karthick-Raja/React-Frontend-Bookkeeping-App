@@ -28,17 +28,17 @@ const AddBook = () => {
 
   return (
     <section>
-      
+
       <div className="addbooks">
         <h4>WELCOME WE HELP YOU TO CREATE NEW BOOK </h4>
-        <h5 style={{fontSize :"50px", marginBottom: "10px"}}><i class="fas fa-hand-point-down"></i></h5>
+        <h5 style={{ fontSize: "50px", marginBottom: "10px" }}><i class="fas fa-hand-point-down"></i></h5>
         <button
           type="button"
           className="btn btn-primary"
           data-toggle="modal"
           data-target="#exampleModal"
         >
-         <AddBoxIcon/> Click To Add Book
+          <AddBoxIcon /> Click To Add Book
         </button>
 
         <div

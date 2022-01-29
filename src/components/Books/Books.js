@@ -32,7 +32,7 @@ const Books = () => {
                   <div className="Bookdetail">
                     <img
                       className="image"
-                      src="https://48b6yd3iigex2rv7g41h5sts-wpengine.netdna-ssl.com/wp-content/uploads/2019/09/memoir-definition.jpg"
+                      src={book.picurl}
                       alt={book.title}
                     />
                     <h5>
@@ -42,6 +42,15 @@ const Books = () => {
                     <h6 className="font">
                       <span style={{ color: "crimson" }}>Title:</span>{" "}
                       {book.title}
+                    </h6>
+                   
+                    <h6 className="font">
+                      <span style={{ color: "crimson" }}>Language:</span>{" "}
+                      {book.language}
+                    </h6>
+                    <h6 className="font">
+                      <span style={{ color: "crimson" }}>Publication:</span>{" "}
+                      {book.publication} - {book.publicationyear}
                     </h6>
                     <h6 className="font">
                       <span style={{ color: "crimson" }}>Author:</span>{" "}

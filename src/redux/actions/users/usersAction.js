@@ -129,7 +129,7 @@ const getUserProfile = () => {
   };
 };
 
-const updateUser = (name, email, password) => {
+const updateUser = (fname,lname,profileurl, email, password) => {
   return async (dispatch, getState) => {
     try {
       dispatch({
@@ -148,7 +148,7 @@ const updateUser = (name, email, password) => {
       };
       const { data } = await axios.put(
         '/api/users/profile/update',
-        { name, email, password },
+        {fname,lname,profileurl, email, password},
         config
       );
       dispatch({

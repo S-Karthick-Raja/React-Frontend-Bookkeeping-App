@@ -7,7 +7,9 @@ const UpdateProfile = ({history}) => {
     const userProfile = useSelector(state => state.userProfile);
     const { user } = userProfile;
     console.log(user);
-    const [name, setName] = useState(user && user.name);
+    const [fname, setFname] = useState(user && user.fname);
+    const [lname, setLname] = useState(user && user.lname);
+    const [pic, setPic] = useState(user && user.pic);
     const [email, setEmail] = useState(user && user.email);
     const [password, setPassword] = useState('');
 
@@ -17,7 +19,7 @@ const UpdateProfile = ({history}) => {
     // //submit
     const formSubmitHandler = e => {
         e.preventDefault();
-        dispatch(updateUser(name, email, password));
+        dispatch(updateUser(fname,lname,pic, email, password));
     };
 
     const updatedUser = useSelector(state => state.updatedUser);
@@ -33,10 +35,34 @@ const UpdateProfile = ({history}) => {
                     <form onSubmit={formSubmitHandler}>
                         <fieldset>
                             <div className="form-group">
-                                <label htmlFor="exampleInputEmail1">Name</label>
+                                <label htmlFor="exampleInputEmail1">First Name</label>
                                 <input
-                                    value={name}
-                                    onChange={e => setName(e.target.value)}
+                                    value={fname}
+                                    onChange={e => setFname(e.target.value)}
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Enter Name"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail1">Last Name</label>
+                                <input
+                                    value={lname}
+                                    onChange={e => setLname(e.target.value)}
+                                    type="text"
+                                    className="form-control"
+                                    id="exampleInputEmail1"
+                                    aria-describedby="emailHelp"
+                                    placeholder="Enter Name"
+                                />
+                            </div>
+                            <div className="form-group">
+                                <label htmlFor="exampleInputEmail1">Profile URL</label>
+                                <input
+                                    value={pic}
+                                    onChange={e => setPic(e.target.value)}
                                     type="text"
                                     className="form-control"
                                     id="exampleInputEmail1"

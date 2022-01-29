@@ -1,14 +1,13 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Navbar } from "./components/Navbar/Navbar";
-import { AddBook } from './components/book/Addbook'
-import { Books } from './components/book/Books'
 import { RegisterUser } from './components/users/RegisterUser';
 import { LoginUser } from './components/users/LoginUser';
 import { Home } from './components/Home/Home';
 import { Profile } from './components/profile/Profile';
 import { UpdateProfile } from './components/UpdateProfile/UpdateProfile';
-import { Bookslibrary } from './components/book/BookLibrary';
-
+import { Bookslibrary } from './components/Books/BookLibrary';
+import { Books } from './components/Books/Books';
+import { AddBook } from './components/Books/Addbook';
 
 function App() {
   return (
@@ -23,7 +22,7 @@ function App() {
           <Route exact path='/books' component={Books} />
           <Route exact path='/book-library' component={Bookslibrary} />
           <Route exact path='/addbook' component={AddBook} />
-          <Route exact path='/register' component={RegisterUser} />   
+          <Route exact path='/register' component={RegisterUser} />
         </Switch>
       </BrowserRouter>
 

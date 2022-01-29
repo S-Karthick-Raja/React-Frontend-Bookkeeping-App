@@ -27,9 +27,9 @@ const Profile = () => {
           <div className="row">
             <div className="col mt-5">
               <div className="card m-auto " style={{ width: "50%" }}>
-                <img src={pic} className="card-img-top" alt="..." />
+                <img src={user.profileurl ? user.profileurl : pic} className="card-img-top" alt="..." />
                 <div className="card-body">
-                  <h4 className="card-text">{user && user.name}</h4>
+                  <h4 className="card-text">{user && user.fname} {user && user.lname}</h4>
                   <p className="card-title">{user && user.email}</p>
                   <Link to="/user-update" className="btn btn-primary">
                     Update your profile
