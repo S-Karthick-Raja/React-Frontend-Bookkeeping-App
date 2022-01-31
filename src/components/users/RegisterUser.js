@@ -4,7 +4,9 @@ import { registerUserAction } from '../../redux/actions/users/usersAction';
 
 
 const RegisterUser = ({ history }) => {
-    const [name, setName] = useState('');
+    const [fname, setFname] = useState('');
+    const [lname, setLname] = useState('');
+    const [pic, setPic] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -27,7 +29,7 @@ const RegisterUser = ({ history }) => {
     const formSubmitHandler = e => {
         e.preventDefault();
         //disptach action here
-        dispatch(registerUserAction(name, email, password));
+        dispatch(registerUserAction(fname, lname, pic, email, password));
     };
 
 
@@ -40,10 +42,33 @@ const RegisterUser = ({ history }) => {
                     <form onSubmit={formSubmitHandler}>
                         <fieldset>
                             <div className='form-group'>
-                                <label htmlFor='exampleInputEmail1'>Name</label>
+                                <label htmlFor='exampleInputEmail1'>First Name</label>
                                 <input
-                                    value={name}
-                                    onChange={(e) => setName(e.target.value)}
+                                    value={fname}
+                                    onChange={(e) => setFname(e.target.value)}
+                                    type='text'
+                                    className='form-control'
+                                    id='exampleInputEmail1'
+                                    aria-describedby='emailHelp'
+                                    placeholder='Enter Name'
+                                />
+                            </div>
+                            <div className='form-group'>
+                                <label htmlFor='exampleInputEmail1'>Last Name</label>
+                                <input
+                                    value={lname}
+                                    onChange={(e) => setLname(e.target.value)}
+                                    type='text'
+                                    className='form-control'
+                                    id='exampleInputEmail1'
+                                    aria-describedby='emailHelp'
+                                    placeholder='Enter Name'
+                                />
+                            </div><div className='form-group'>
+                                <label htmlFor='exampleInputEmail1'>Profile URL</label>
+                                <input
+                                    value={pic}
+                                    onChange={(e) => setPic(e.target.value)}
                                     type='text'
                                     className='form-control'
                                     id='exampleInputEmail1'

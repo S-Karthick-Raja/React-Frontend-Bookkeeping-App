@@ -15,7 +15,7 @@ import {
   USER_UPDATE_FAIL,
 } from "../books/actionTypes";
 
-const registerUserAction = (name, email, password) => {
+const registerUserAction = (fname, lname, profileurl, email, password) => {
   return async (dispatch) => {
     try {
       dispatch({
@@ -30,7 +30,9 @@ const registerUserAction = (name, email, password) => {
       const { data } = await axios.post(
         "/api/users/register",
         {
-          name,
+          fname,
+          lname,
+          profileurl,
           email,
           password,
         },
@@ -129,7 +131,7 @@ const getUserProfile = () => {
   };
 };
 
-const updateUser = (fname,lname,profileurl, email, password) => {
+const updateUser = (fname, lname, profileurl, email, password) => {
   return async (dispatch, getState) => {
     try {
       dispatch({
@@ -148,7 +150,7 @@ const updateUser = (fname,lname,profileurl, email, password) => {
       };
       const { data } = await axios.put(
         '/api/users/profile/update',
-        {fname,lname,profileurl, email, password},
+        { fname, lname, profileurl, email, password },
         config
       );
       dispatch({

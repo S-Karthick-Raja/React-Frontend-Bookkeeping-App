@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUser } from "../../redux/actions/users/usersAction";
 
-const UpdateProfile = ({history}) => {
+const UpdateProfile = ({ history }) => {
     //Get the user from localstorage and pass to the initial states
     const userProfile = useSelector(state => state.userProfile);
     const { user } = userProfile;
@@ -15,11 +15,11 @@ const UpdateProfile = ({history}) => {
 
     // //dispatch action
     const dispatch = useDispatch();
-    
+
     // //submit
     const formSubmitHandler = e => {
         e.preventDefault();
-        dispatch(updateUser(fname,lname,pic, email, password));
+        dispatch(updateUser(fname, lname, pic, email, password));
     };
 
     const updatedUser = useSelector(state => state.updatedUser);

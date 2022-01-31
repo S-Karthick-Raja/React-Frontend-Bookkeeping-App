@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import DeleteIcon from "@mui/icons-material/Delete";
-import EditIcon from "@mui/icons-material/Edit";
 import { getUserProfile } from "../../redux/actions/users/usersAction";
 import { Link } from "react-router-dom";
 import AddBoxIcon from '@mui/icons-material/AddBox';
@@ -52,14 +50,12 @@ const Bookslibrary = () => {
                                     {book.pagecount}
                                 </h6>
                                 <div className="icons">
-                                    <span style={{ color: "green" }}>
-                                        Edit Book:
-                                        <EditIcon color="success" />
-                                    </span>
-                                    <span style={{ color: "red" }}>
-                                        Delete Book:
-                                        <DeleteIcon color="error" />
-                                    </span>
+                                    <Link to="/book-update" className="btn btn-primary">
+                                        Update your profile
+                                    </Link>
+                                    <Link to="/book-update" className="btn btn-primary">
+                                        Update your profile
+                                    </Link>
                                 </div>
                             </div>
                         </div>
