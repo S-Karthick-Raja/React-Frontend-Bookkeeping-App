@@ -35,7 +35,7 @@ const LoginUser = ({ history }) => {
                 <div className='container'>
                     {loading && <h1>Loading</h1>}
                     {error && <ErrorMessage>{error}</ErrorMessage>}
-                    <h1 className='text-center'>Login/Signin</h1>
+                    <h1 className='text-center'>LOGIN</h1>
                     <form onSubmit={loginUserSubmitHandler}>
                         <fieldset>
                             <div className='form-group'>

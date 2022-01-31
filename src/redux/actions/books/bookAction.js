@@ -5,10 +5,7 @@ import {
     CREATE_BOOK_SUCCESS,
     FETCH_BOOK_REQUEST,
     FETCH_BOOK_FAIL,
-    FETCH_BOOK_SUCCESS,
-    BOOK_UPDATE_REQUEST,
-    BOOK_UPDATE_SUCCESS,
-    BOOK_UPDATE_FAIL,
+    FETCH_BOOK_SUCCESS
 } from "./actionTypes";
 
 const createBookAction = (bookData) => {

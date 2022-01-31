@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { registerUserAction } from '../../redux/actions/users/usersAction';
 
 
@@ -37,7 +38,7 @@ const RegisterUser = ({ history }) => {
         <div className='row container-height'>
             <div className='col-lg-6 col-md-6 m-auto'>
                 <div className='container'>
-                    <h1 className='text-center'>Register</h1>
+                    <h1 className='text-center'>REGISTER USER</h1>
 
                     <form onSubmit={formSubmitHandler}>
                         <fieldset>
@@ -102,6 +103,15 @@ const RegisterUser = ({ history }) => {
                             <button type='submit' className='btn btn-info m-auto'>
                                 Register
                             </button>
+                            <hr />
+                            <div style={{marginBottom:"50px"}}>
+                                <spam>Already existing user click here to login</spam>
+                                <Link to="/login" style={{marginLeft:"20px"}}>
+                                    <button type='submit' className='btn btn-info m-auto'>
+                                        login
+                                    </button>
+                                </Link>
+                            </div>
                         </fieldset>
                     </form>
                 </div>
