@@ -50,7 +50,7 @@ const RegisterUser = ({ history }) => {
                                     onChange={(e) => setFname(e.target.value)}
                                     type='text'
                                     className='form-control'
-                                    id='exampleInputEmail1'
+                                    // id='exampleInputEmail1'
                                     aria-describedby='emailHelp'
                                     placeholder='Enter Name'
                                 />
@@ -62,7 +62,7 @@ const RegisterUser = ({ history }) => {
                                     onChange={(e) => setLname(e.target.value)}
                                     type='text'
                                     className='form-control'
-                                    id='exampleInputEmail1'
+                                    // id='exampleInputEmail1'
                                     aria-describedby='emailHelp'
                                     placeholder='Enter Name'
                                 />
@@ -73,7 +73,7 @@ const RegisterUser = ({ history }) => {
                                     onChange={(e) => setPic(e.target.value)}
                                     type='text'
                                     className='form-control'
-                                    id='exampleInputEmail1'
+                                    // id='exampleInputEmail1'
                                     aria-describedby='emailHelp'
                                     placeholder='Enter Name'
                                 />
@@ -85,7 +85,7 @@ const RegisterUser = ({ history }) => {
                                     onChange={(e) => setEmail(e.target.value)}
                                     type='email'
                                     className='form-control'
-                                    id='exampleInputEmail1'
+                                    // id='exampleInputEmail1'
                                     aria-describedby='emailHelp'
                                     placeholder='Enter email'
                                 />
@@ -97,7 +97,7 @@ const RegisterUser = ({ history }) => {
                                     onChange={(e) => setPassword(e.target.value)}
                                     type='password'
                                     className='form-control'
-                                    id='exampleInputPassword1'
+                                    // id='exampleInputPassword1'
                                     placeholder='Password'
                                 />
                             </div>
