@@ -196,4 +196,4 @@ const updateUser = (fname, lname, profileurl, email, password) => {
   };
 };
 
-export { registerUserAction, loginUserAction, logoutUserAction, getUserProfile, updateUser };
+export { registerUserAction, loginUserAction, logoutUserAction , updateUser };
