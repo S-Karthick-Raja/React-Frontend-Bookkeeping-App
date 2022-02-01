@@ -25,7 +25,7 @@ const registerUserAction = (fname, lname, profileurl, email, password) => {
 
       //MAKE ACTUALL CALL
       const config = {
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json ,text/plain, */*" },
       };
 
       const { data } = await axios.post(
@@ -67,7 +67,7 @@ const loginUserAction = (email, password) => {
 
       //Make the actual
       const config = {
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json ,text/plain, */*" },
       };
 
       const { data } = await axios.post(
@@ -145,7 +145,7 @@ const updateUser = (fname, lname, profileurl, email, password) => {
       //Create a config and pass to axios for authentication
       const config = {
         headers: {
-          'Content-Type': 'application/json',
+          'Content-Type': 'application/json ,text/plain, */*',
           authorization: `Bearer ${userInfo.token}`,
         },
       };
