@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchBook, updateBook } from '../../redux/actions/books/bookActions';
 import { API_URL } from '../../Global-Constant/globalConstant';
 
+
 const BookDetail = ({ history }) => {
   const { id } = useParams();
 

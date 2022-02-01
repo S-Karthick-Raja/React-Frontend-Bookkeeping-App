@@ -19,7 +19,7 @@ const createBookAction = (bookData) => {
                 "Content-Type": "application/json",
             };
 
-            const { data } = await axios.post(`${API_URL}/books`, bookData, config);
+            const { data } = await axios.post(`${API_URL}/api/books`, bookData, config);
 
             dispatch({
                 type: CREATE_BOOK_SUCCESS,
@@ -48,7 +48,7 @@ const fetchBooksAction = () => {
                 },
             };
             // make http call to our backend
-            const { data } = await axios.get(`${API_URL}/books`, config);
+            const { data } = await axios.get(`${API_URL}/api/books`, config);
 
             dispatch({
                 type: FETCH_BOOK_SUCCESS,

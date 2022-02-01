@@ -12,7 +12,6 @@ const RegisterUser = ({ history }) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-
     const dispatch = useDispatch();
 
     //Grab user login from store
@@ -106,9 +105,9 @@ const RegisterUser = ({ history }) => {
                                 Register
                             </button>
                             <hr />
-                            <div style={{ marginBottom: "50px" }}>
+                            <div style={{marginBottom:"50px"}}>
                                 <spam>Already existing user click here to login</spam>
-                                <Link to="/login" style={{ marginLeft: "20px" }}>
+                                <Link to="/login" style={{marginLeft:"20px"}}>
                                     <button type='submit' className='btn btn-info m-auto'>
                                         login
                                     </button>

@@ -29,7 +29,7 @@ const registerUserAction = (fname, lname, profileurl, email, password) => {
       };
 
       const { data } = await axios.post(
-        `${API_URL}/register`,
+        `${API_URL}/api/users/register`,
         {
           fname,
           lname,
@@ -71,7 +71,7 @@ const loginUserAction = (email, password) => {
       };
 
       const { data } = await axios.post(
-        `${API_URL}/login`,
+        `${API_URL}/api/users/login`,
         { email, password },
         config
       );
@@ -118,7 +118,7 @@ const getUserProfile = () => {
         },
       };
       // make request
-      const { data } = await axios.get(`${API_URL}/profile`, config);
+      const { data } = await axios.get(`${API_URL}/api/users/profile`, config);
       dispatch({
         type: USER_PROFILE_SUCCESS,
         payload: data,
@@ -150,7 +150,7 @@ const updateUser = (fname, lname, profileurl, email, password) => {
         },
       };
       const { data } = await axios.put(
-        `${API_URL}/update`,
+        `${API_URL}/api/users/profile/update`,
         { fname, lname, profileurl, email, password },
         config
       );
