@@ -6,15 +6,26 @@ import { Link } from "react-router-dom";
 import { getUserProfile } from "../../redux/actions/users/usersAction";
 import { Loading } from "../Loading/Loading";
 
-const Profile = () => {
+const Profile = ({history}) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getUserProfile());
   }, [dispatch]);
 
+  //Check if user is login otherwise redirect
+  const userLogin = useSelector(state => state.userLogin);
+  const { userInfo } = userLogin;
+  useEffect(() => {
+    if (userInfo === null) history.push('/login');
+  }, [userInfo, history]);
+
+  //Get user Profile
+
   const userProfile = useSelector((state) => state.userProfile);
   const { loading, user, error } = userProfile;
+
+  console.log(userProfile);
 
   return (
     <section className="profile">

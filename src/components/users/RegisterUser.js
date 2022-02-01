@@ -10,29 +10,29 @@ const RegisterUser = ({ history }) => {
     const [lname, setLname] = useState('');
     const [pic, setPic] = useState('');
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-
-    const dispatch = useDispatch();
+    const [password, setPassword] = useState('');   
 
     //Grab user login from store
     const userLogin = useSelector(state => state.userLogin);
 
-    const { userInfo } = userLogin;
+    const { userInfo, error } = userLogin;
 
-    //Redirect if user is login/authenticated
-
-    useEffect(() => {
-        if (userInfo) {
-            history.push(`${API_URL}/profile`);
-        }
-    }, [history, userInfo]);
-
+    const dispatch = useDispatch();
 
     const formSubmitHandler = e => {
         e.preventDefault();
         //disptach action here
         dispatch(registerUserAction(fname, lname, pic, email, password));
+        if (userInfo !== null && error === undefined) history.push('/');
     };
+
+        //Redirect if user is login/authenticated
+
+        useEffect(() => {
+            if (userInfo) {
+                history.push(`${API_URL}/profile`);
+            }
+        }, [history, userInfo]);
 
 
     return (
