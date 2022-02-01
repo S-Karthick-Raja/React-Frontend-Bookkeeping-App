@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../../Global-Constant/globalConstant";
 import {
   USER_REGISTER_REQUEST,
   USER_REGISTER_SUCCESS,
@@ -28,7 +29,7 @@ const registerUserAction = (fname, lname, profileurl, email, password) => {
       };
 
       const { data } = await axios.post(
-        "/api/users/register",
+        `${API_URL}/register`,
         {
           fname,
           lname,
@@ -70,7 +71,7 @@ const loginUserAction = (email, password) => {
       };
 
       const { data } = await axios.post(
-        "/api/users/login",
+        `${API_URL}/login`,
         { email, password },
         config
       );
@@ -117,7 +118,7 @@ const getUserProfile = () => {
         },
       };
       // make request
-      const { data } = await axios.get('/api/users/profile', config);
+      const { data } = await axios.get(`${API_URL}/profile`, config);
       dispatch({
         type: USER_PROFILE_SUCCESS,
         payload: data,
@@ -149,7 +150,7 @@ const updateUser = (fname, lname, profileurl, email, password) => {
         },
       };
       const { data } = await axios.put(
-        '/api/users/profile/update',
+        `${API_URL}/update`,
         { fname, lname, profileurl, email, password },
         config
       );

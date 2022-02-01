@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "../../../Global-Constant/globalConstant";
 import {
     CREATE_BOOK_FAIL,
     CREATE_BOOK_REQUEST,
@@ -18,7 +19,7 @@ const createBookAction = (bookData) => {
                 "Content-Type": "application/json",
             };
 
-            const { data } = await axios.post("/api/books", bookData, config);
+            const { data } = await axios.post(`${API_URL}/books`, bookData, config);
 
             dispatch({
                 type: CREATE_BOOK_SUCCESS,
@@ -47,7 +48,7 @@ const fetchBooksAction = () => {
                 },
             };
             // make http call to our backend
-            const { data } = await axios.get("/api/books", config);
+            const { data } = await axios.get(`${API_URL}/books`, config);
 
             dispatch({
                 type: FETCH_BOOK_SUCCESS,
