@@ -4,7 +4,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { logoutUserAction } from '../../redux/actions/users/usersAction';
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
-
+import { API_URL } from '../../Global-Constant/globalConstant';
 
 const Navbar = props => {
   const state = useSelector(state => state.userLogin);
@@ -15,7 +15,7 @@ const Navbar = props => {
 
   const logoutHandler = () => {
     dispatch(logoutUserAction());
-    history.push('/');
+    history.push(`${API_URL}/`);
   };
 
   const { userInfo, loading, error } = state;

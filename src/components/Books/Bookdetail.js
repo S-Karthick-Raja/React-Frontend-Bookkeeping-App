@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchBook, updateBook } from '../../redux/actions/books/bookActions';
+import { API_URL } from '../../Global-Constant/globalConstant';
 
 const BookDetail = ({ history }) => {
   const { id } = useParams();
@@ -30,7 +31,7 @@ const BookDetail = ({ history }) => {
     };
     e.preventDefault();
     dispatch(updateBook(id, data));
-    history.push('/books');
+    history.push(`${API_URL}/books`);
   };
   return (
     <div className='row container-height'>

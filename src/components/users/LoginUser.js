@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { API_URL } from '../../Global-Constant/globalConstant';
 import { loginUserAction } from '../../redux/actions/users/usersAction';
 import { ErrorMessage } from '../ErrorMessage';
 
@@ -26,7 +27,7 @@ const LoginUser = ({ history }) => {
 
     //Redirect
     useEffect(() => {
-        if (userInfo) history.push('/profile');
+        if (userInfo) history.push(`${API_URL}/profile`);
     }, [history, state, userInfo]);
 
     return (

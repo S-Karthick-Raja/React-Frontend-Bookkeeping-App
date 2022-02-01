@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../../Global-Constant/globalConstant';
 import { registerUserAction } from '../../redux/actions/users/usersAction';
 
 
@@ -10,6 +11,7 @@ const RegisterUser = ({ history }) => {
     const [pic, setPic] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
 
     const dispatch = useDispatch();
 
@@ -22,7 +24,7 @@ const RegisterUser = ({ history }) => {
 
     useEffect(() => {
         if (userInfo) {
-            history.push('/profile');
+            history.push(`${API_URL}/profile`);
         }
     }, [history, userInfo]);
 
@@ -104,9 +106,9 @@ const RegisterUser = ({ history }) => {
                                 Register
                             </button>
                             <hr />
-                            <div style={{marginBottom:"50px"}}>
+                            <div style={{ marginBottom: "50px" }}>
                                 <spam>Already existing user click here to login</spam>
-                                <Link to="/login" style={{marginLeft:"20px"}}>
+                                <Link to="/login" style={{ marginLeft: "20px" }}>
                                     <button type='submit' className='btn btn-info m-auto'>
                                         login
                                     </button>
