@@ -1,1 +1,1 @@
-export const API_URL = "https://bookkeeping-app-capstone.herokuapp.com/";
+export const API_URL = "https://bookkeeping-app-capstone.herokuapp.com";
