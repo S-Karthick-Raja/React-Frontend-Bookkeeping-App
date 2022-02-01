@@ -104,9 +104,36 @@ const logoutUserAction = () => async dispatch => {
 };
 
 // Profile action
-const getUserProfile = () => {
+// const getUserProfile = () => {
+//   return async (dispatch, getState) => {
+//     // Grab the user token from store
+//     const { userInfo } = getState().userLogin;
+//     try {
+//       dispatch({
+//         type: USER_PROFILE_REQUEST,
+//       });
+//       const config = {
+//         headers: {
+//           authorization: `Bearer ${userInfo.token}`,
+//         },
+//       };
+//       // make request
+//       const { data } = await axios.get(`${API_URL}/api/users/profile`, config);
+//       dispatch({
+//         type: USER_PROFILE_SUCCESS,
+//         payload: data,
+//       });
+//     } catch (error) {
+//       dispatch({
+//         type: USER_PROFILE_FAIL,
+//         payload: error.response && error.response.data.message,
+//       });
+//     }
+//   };
+// };
+
+export const getUserProfile = () => {
   return async (dispatch, getState) => {
-    // Grab the user token from store
     const { userInfo } = getState().userLogin;
     try {
       dispatch({
@@ -117,7 +144,6 @@ const getUserProfile = () => {
           authorization: `Bearer ${userInfo.token}`,
         },
       };
-      // make request
       const { data } = await axios.get(`${API_URL}/api/users/profile`, config);
       dispatch({
         type: USER_PROFILE_SUCCESS,
